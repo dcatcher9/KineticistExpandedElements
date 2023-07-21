@@ -83,6 +83,11 @@
 		<Reference Include="Assembly-CSharp" HintPath="$(SolutionDir)lib\Assembly-CSharp.dll" />
 	</ItemGroup>
 
+	<!-- Get Required Library -->
+	<Target Name="GetLib" BeforeTargets="Clean">
+		<Copy SourceFiles="$(Codex)" DestinationFiles="$(ModRepo)\lib\CodexLib.dll" />
+	</Target>
+	
 	<!-- Publicize -->
 	<Target Name="Publicize" AfterTargets="Clean">
 		<ItemGroup>
